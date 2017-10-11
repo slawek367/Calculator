@@ -1,11 +1,14 @@
 /*button rows */
 .buttonRow {
     display: block;
+    text-align: center;
+    width:100%;
+    padding-top:25%;
 }
 
 /* button css */
 .buttonNumber{
-    box-sizing: border-box;
+    box-sizing: margin-box;
 
     background-color: darkgray;
     border-style: solid;
@@ -14,8 +17,9 @@
     border-radius: 15%;
     box-shadow: 3px 3px 0px 0px black;
     margin: 3px;
-
+    
     width: 24%;
+    padding-top:25%;
 }
 
 .buttonNumber:hover{
