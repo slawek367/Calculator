@@ -1,6 +1,28 @@
+/* screen */
+
+.screen {
+
+    box-sizing: border-box;
+    width: 95%;
+    padding-bottom: 15%;
+    margin: 2.5%;
+
+    background-color: green;
+    border-style: solid;
+    border-width: 2px;
+    border-color: darkgreen;
+
+    box-shadow: 0px 0px 2px 4px black;
+}
+
 /*button rows */
-.buttonRow {
-    width:100%;
+.calc {
+    background-color: lightgrey;
+
+    border-style: solid;
+    border-width: 2px;
+    border-color: darkgray;
+    box-shadow: 3px 3px 2px 4px black;
 }
 
 /* button css */
@@ -43,6 +65,13 @@
     text-align: center;
     vertical-align: middle;
 }
+
+.contentCalc {
+    position:absolute;
+    height: 100%;
+    width: 90%;
+    text-align: right;
+    vertical-align: middle;}
 
 .table {
     display:table;
