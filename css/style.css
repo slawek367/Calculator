@@ -29,11 +29,6 @@
     box-shadow: 3px 3px 2px 4px black;
 
     margin-top: 10px;
-
-}
-
-.buttons{
-
 }
 
 /* button css */
@@ -82,7 +77,8 @@
     height: 100%;
     width: 90%;
     text-align: right;
-    vertical-align: middle;}
+    vertical-align: middle;
+}
 
 .table {
     display:table;
@@ -95,4 +91,11 @@
     vertical-align: middle;
     height: 100%;
     width: 100%;
+}
+
+/* chart */
+.chart{
+    border:1px solid #000000; 
+    padding-top: 15%; 
+    width:100%;
 }

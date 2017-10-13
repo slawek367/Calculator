@@ -40,7 +40,7 @@ function buttonClicked(){
             console.log(err)
             clearAll()
         }
-    } else if (clickedValue == "un"){
+    } else if (clickedValue == "undo"){
         undoOneLetter()
     } else if (clickedValue == "AC"){
         clearAll()
