@@ -25,7 +25,7 @@ function buttonClicked(){
     //if we clicked number or operator
 
     if(! isNaN(clickedValue) || clickedValue.match(/[-+*/.]/) ){
-        if(maxScreenSize >= calculation.length){ //check if we have place to display numbers
+        if(maxScreenSize > calculation.length){ //check if we have place to display numbers
             if(calculation == "0"){
                 calculation = ""
             }
@@ -54,7 +54,7 @@ function buttonClicked(){
 
 function showValueOnScreen(number){
     screen = document.getElementById("result")
-    screen.innerHTML = number
+    screen.innerHTML = number.substring(0,maxScreenSize+2)
 }
 
 function clearAll(){
