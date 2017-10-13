@@ -11,13 +11,6 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
         crossorigin="anonymous">
 
-    <!-- Optional theme -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
-        crossorigin="anonymous">
-
-    <!-- Latest compiled and minified JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
-        crossorigin="anonymous"></script>
 
     <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
@@ -25,142 +18,12 @@
 <body>
     <div class="col-lg-offset-4 col-lg-3 col-md-offset-4 col-md-3 col-sm-offset-4 col-sm-3" style="background-color:aliceblue;">
 
-        <div class="calc col-lg-12 col-md-12 col-sm-12">
+        <div class="calc col-lg-12 col-md-12 col-sm-12" id="calcDiv">
 
             <div class="screen col-md-12">
                 <div class="contentCalc">
                     <div class="table">
-                        <div class="cell">
-                            7000
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="buttonNumber">
-                <div class="content">
-                    <div class="table">
-                        <div class="cell">
-                            7
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="buttonNumber">
-                <div class="content">
-                    <div class="table">
-                        <div class="cell">
-                            8
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="buttonNumber">
-                <div class="content">
-                    <div class="table">
-                        <div class="cell">
-                            9
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="buttonNumber">
-                <div class="content">
-                    <div class="table">
-                        <div class="cell">
-                            /
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="buttonNumber">
-                <div class="content">
-                    <div class="table">
-                        <div class="cell">
-                            4
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="buttonNumber">
-                <div class="content">
-                    <div class="table">
-                        <div class="cell">
-                            5
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="buttonNumber">
-                <div class="content">
-                    <div class="table">
-                        <div class="cell">
-                            6
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="buttonNumber">
-                <div class="content">
-                    <div class="table">
-                        <div class="cell">
-                            x
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="buttonNumber">
-                <div class="content">
-                    <div class="table">
-                        <div class="cell">
-                            1
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="buttonNumber">
-                <div class="content">
-                    <div class="table">
-                        <div class="cell">
-                            2
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="buttonNumber">
-                <div class="content">
-                    <div class="table">
-                        <div class="cell">
-                            3
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="buttonNumber">
-                <div class="content">
-                    <div class="table">
-                        <div class="cell">
-                            -
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="buttonNumber">
-                <div class="content">
-                    <div class="table">
-                        <div class="cell">
+                        <div class="cell" id="result">
                             0
                         </div>
                     </div>
@@ -170,9 +33,7 @@
             <div class="buttonNumber">
                 <div class="content">
                     <div class="table">
-                        <div class="cell">
-                            .
-                        </div>
+                        <div class="cell">7</div>
                     </div>
                 </div>
             </div>
@@ -180,9 +41,7 @@
             <div class="buttonNumber">
                 <div class="content">
                     <div class="table">
-                        <div class="cell">
-                            =
-                        </div>
+                        <div class="cell">8</div>
                     </div>
                 </div>
             </div>
@@ -190,9 +49,7 @@
             <div class="buttonNumber">
                 <div class="content">
                     <div class="table">
-                        <div class="cell">
-                            +
-                        </div>
+                        <div class="cell">9</div>
                     </div>
                 </div>
             </div>
@@ -200,9 +57,7 @@
             <div class="buttonNumber">
                 <div class="content">
                     <div class="table">
-                        <div class="cell">
-                            tg
-                        </div>
+                        <div class="cell">/</div>
                     </div>
                 </div>
             </div>
@@ -210,9 +65,111 @@
             <div class="buttonNumber">
                 <div class="content">
                     <div class="table">
-                        <div class="cell">
-                            bksp
-                        </div>
+                        <div class="cell">4</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="buttonNumber">
+                <div class="content">
+                    <div class="table">
+                        <div class="cell">5</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="buttonNumber">
+                <div class="content">
+                    <div class="table">
+                        <div class="cell">6</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="buttonNumber">
+                <div class="content">
+                    <div class="table">
+                        <div class="cell">*</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="buttonNumber">
+                <div class="content">
+                    <div class="table">
+                        <div class="cell">1</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="buttonNumber">
+                <div class="content">
+                    <div class="table">
+                        <div class="cell">2</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="buttonNumber">
+                <div class="content">
+                    <div class="table">
+                        <div class="cell">3</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="buttonNumber">
+                <div class="content">
+                    <div class="table">
+                        <div class="cell">-</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="buttonNumber">
+                <div class="content">
+                    <div class="table">
+                        <div class="cell">0</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="buttonNumber">
+                <div class="content">
+                    <div class="table">
+                        <div class="cell">.</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="buttonNumber">
+                <div class="content">
+                    <div class="table">
+                        <div class="cell">=</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="buttonNumber">
+                <div class="content">
+                    <div class="table">
+                        <div class="cell">+</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="buttonNumber">
+                <div class="content">
+                    <div class="table">
+                        <div class="cell">tg</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="buttonNumber">
+                <div class="content">
+                    <div class="table">
+                        <div class="cell">un</div>
                     </div>
                 </div>
             </div>
@@ -220,9 +177,7 @@
             <div class="buttonNumber bigButton">
                 <div class="content">
                     <div class="table">
-                        <div class="cell">
-                            AC
-                        </div>
+                        <div class="cell">AC</div>
                     </div>
                 </div>
             </div>
@@ -234,7 +189,7 @@
 
     </div>
 
-
+    <script src="js/calc.js"></script>
 </body>
 
 </html>
