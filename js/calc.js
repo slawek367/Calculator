@@ -47,23 +47,36 @@ function buttonClicked(){
     } else if (clickedValue == "tg"){
         console.log("not finished")
     }
+    } else if (clickedValue == "ctg"){
+        console.log("not finished")
+    }
+    } else if (clickedValue == "sin"){
+        console.log("not finished")
+    }
+    } else if (clickedValue == "cos"){
+        console.log("not finished")
+    }
 
 
     showValueOnScreen(calculation)
 }
 
+//function pringing value on calculator screen
 function showValueOnScreen(number){
     screen = document.getElementById("result")
     screen.innerHTML = number.substring(0,maxScreenSize+2)
 }
 
+//function clearing calculator
 function clearAll(){
     calculation = "0"
     result = 0
 }
 
+//function deleting last character from screen
 function undoOneLetter(){
     if(calculation.length>0){
         calculation = calculation.slice(0, -1) //delete last char
     }
 }
+
