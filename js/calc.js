@@ -46,13 +46,10 @@ function buttonClicked(){
         clearAll()
     } else if (clickedValue == "tg"){
         console.log("not finished")
-    }
     } else if (clickedValue == "ctg"){
         console.log("not finished")
-    }
     } else if (clickedValue == "sin"){
         console.log("not finished")
-    }
     } else if (clickedValue == "cos"){
         console.log("not finished")
     }
