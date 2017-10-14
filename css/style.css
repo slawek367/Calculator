@@ -1,8 +1,6 @@
 /* screen */
 
 .screen {
-
-    box-sizing: border-box;
     width: 95%;
     padding-bottom: 15%;
     padding-left: 7%;
@@ -16,7 +14,7 @@
 
     box-shadow: 0px 0px 2px 3px black;
 
-    font-size: 14px;
+    font-size: 15px;
 }
 
 /*button rows */
@@ -26,7 +24,7 @@
     border-style: solid;
     border-width: 2px;
     border-color: darkgray;
-    box-shadow: 3px 3px 2px 4px black;
+    box-shadow: 3px 3px 2px 3px black;
 
     margin-top: 10px;
 }
@@ -89,13 +87,18 @@
 .cell {
     display:table-cell;
     vertical-align: middle;
-    height: 100%;
     width: 100%;
 }
 
 /* chart */
 .chart{
-    border:1px solid #000000; 
-    padding-top: 15%; 
+    border:2px solid #000000;
+    box-shadow: -2px -2px 1px 0px black;
+    background-color: darkgray;
     width:100%;
+    margin-top: 2.5%;
+    margin-bottom: 2.5%;
+    margin-left: 0px;
+    margin-right: 0px;
+
 }
