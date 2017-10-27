@@ -10,22 +10,19 @@ for (i=0; i < buttons.length; i++){
 let calculation = ""
 let result = 0
 let maxScreenSize = 15 //how many numbers we can display
+drawLines() //draw empty chart
 
 function buttonClicked(){
-    //console.log("Clicked" + this)
-    //console.log(this.innerHTML)
-
     //parsing string to DOM el
     let output = this.innerHTML
     let parser = new DOMParser()
     let el = parser.parseFromString(output, "text/xml")
-
     let clickedValue = el.getElementsByClassName("cell")[0].textContent
 
     //if we clicked number or operator
-
     if(! isNaN(clickedValue) || clickedValue.match(/[-+*/.]/) ){
-        if(maxScreenSize > calculation.length){ //check if we have place to display numbers
+        //check if we have place to display numbers
+        if(maxScreenSize > calculation.length){ 
             if(calculation == "0"){
                 calculation = ""
             }
@@ -44,18 +41,10 @@ function buttonClicked(){
         undoOneLetter()
     } else if (clickedValue == "AC"){
         clearAll()
-    } else if (clickedValue == "tg"){
+        drawLines() //clearing chart
+    } else if (clickedValue == "tg" || clickedValue == "ctg" || clickedValue == "sin" || clickedValue == "cos"){
         drawChart(clickedValue)
         return
-    } else if (clickedValue == "ctg"){
-        drawChart(clickedValue)
-        return
-    } else if (clickedValue == "sin"){
-        drawChart(clickedValue)
-        return
-    } else if (clickedValue == "cos"){
-        drawChart(clickedValue)
-        return 
     }
 
     showValueOnScreen(calculation)
@@ -131,10 +120,8 @@ function drawChart(chartType){
     ctx.strokeStyle="#ff3300";
     ctx.lineWidth=3;
 
+    //drawing chart with 0.1 acuracy
     for(let x = -xLines/2 + 0.1; x<=xLines/2; x=x+0.1){
-        //console.log("\n")
-        //console.log(Math.tan(x-0.1)*yPxPer1cm)
-
         switch(chartType){
             case "tg": tg(ctx, x, xPxPer1cm, yPxPer1cm); break;
             case "ctg": ctg(ctx, x, xPxPer1cm, yPxPer1cm); break;
@@ -161,10 +148,12 @@ function ctg(ctx, x, xPxPer1cm, yPxPer1cm){
         }
 }
 
+function sin(ctx, x, xPxPer1cm, yPxPer1cm){
+        ctx.moveTo((x-0.1)*xPxPer1cm, Math.sin(x-0.1)*yPxPer1cm*-1)
+        ctx.lineTo(x*xPxPer1cm, Math.sin(x)*yPxPer1cm*-1)
+}
 
-
-//drawTg()
-
-function wait(){
-    return
+function cos(ctx, x, xPxPer1cm, yPxPer1cm){
+        ctx.moveTo((x-0.1)*xPxPer1cm, Math.cos(x-0.1)*yPxPer1cm*-1)
+        ctx.lineTo(x*xPxPer1cm, Math.cos(x)*yPxPer1cm*-1)
 }
