@@ -45,25 +45,17 @@ function buttonClicked(){
     } else if (clickedValue == "AC"){
         clearAll()
     } else if (clickedValue == "tg"){
-        console.log("not finished")
-        showValueOnScreen("not done")
-        clearAll()
+        drawChart(clickedValue)
         return
     } else if (clickedValue == "ctg"){
-        console.log("not finished")
-        showValueOnScreen("not done")
-        clearAll()
+        drawChart(clickedValue)
         return
     } else if (clickedValue == "sin"){
-        console.log("not finished")
-        showValueOnScreen("not done")
-        clearAll()
-        return    
+        drawChart(clickedValue)
+        return
     } else if (clickedValue == "cos"){
-        console.log("not finished")
-        showValueOnScreen("not done")
-        clearAll()
-        return    
+        drawChart(clickedValue)
+        return 
     }
 
     showValueOnScreen(calculation)
@@ -97,6 +89,13 @@ function drawLines(){
 
     let width = canvas.width
     let height = canvas.height
+    
+    ctx.beginPath()
+    ctx.strokeStyle="#000000";
+    ctx.lineWidth=1;
+    
+    //clear all before rendering
+    ctx.clearRect(0, 0, canvas.width, canvas.height); //clear all
 
     //write x and y lines
     for(let i=0; i<yLines; i++){
@@ -108,18 +107,19 @@ function drawLines(){
         ctx.moveTo(width/xLines*i,0);
         ctx.lineTo(width/xLines*i,height);
     }
-
     ctx.stroke();
 }
 
-/*
-function drawTg(){
+
+function drawChart(chartType){
+    drawLines()
     let xLines = 16
     let yLines = 8
 
     let canvas =  document.getElementById("myCanvas")
     let ctx = canvas.getContext("2d");
-
+    ctx.save();
+    
     let width = canvas.width
     let height = canvas.height
 
@@ -127,14 +127,44 @@ function drawTg(){
     let yPxPer1cm = height / yLines;
 
     ctx.beginPath()
+    ctx.translate(width/2, height/2)
+    ctx.strokeStyle="#ff3300";
+    ctx.lineWidth=3;
 
-    for(let x=-(xLines/2)+0.01; x<=xLines/2; x=x+0.01){
-        ctx.moveTo((x-0.01+4) * xPxPer1cm, height/2 - Math.tan(x-0.01)*height )
-        ctx.lineTo((x+4) * xPxPer1cm,height/2 - Math.tan(x)*height)
+    for(let x = -xLines/2 + 0.1; x<=xLines/2; x=x+0.1){
+        //console.log("\n")
+        //console.log(Math.tan(x-0.1)*yPxPer1cm)
+
+        switch(chartType){
+            case "tg": tg(ctx, x, xPxPer1cm, yPxPer1cm); break;
+            case "ctg": ctg(ctx, x, xPxPer1cm, yPxPer1cm); break;
+            case "cos": cos(ctx, x, xPxPer1cm, yPxPer1cm); break;
+            case "sin": sin(ctx, x, xPxPer1cm, yPxPer1cm); break;
+        }
+
     }
     ctx.stroke();
+    ctx.restore();
 }
-*/
 
-drawLines()
+function tg(ctx, x, xPxPer1cm, yPxPer1cm){
+        if(!(Math.tan(x-0.1)*yPxPer1cm*-1<0 && Math.tan(x)*yPxPer1cm*-1>0)){ // to not write lines from down to up
+        ctx.moveTo((x-0.1)*xPxPer1cm, Math.tan(x-0.1)*yPxPer1cm*-1)
+        ctx.lineTo(x*xPxPer1cm, Math.tan(x)*yPxPer1cm*-1)
+        }
+}
+
+function ctg(ctx, x, xPxPer1cm, yPxPer1cm){
+        if(!((1/Math.tan(x-0.1))*yPxPer1cm*-1>0 && (1/Math.tan(x))*yPxPer1cm*-1<0)){ // to not write lines from down to up
+        ctx.moveTo((x-0.1)*xPxPer1cm, (1/Math.tan(x-0.1))*yPxPer1cm*-1)
+        ctx.lineTo(x*xPxPer1cm, (1/Math.tan(x))*yPxPer1cm*-1)
+        }
+}
+
+
+
 //drawTg()
+
+function wait(){
+    return
+}
