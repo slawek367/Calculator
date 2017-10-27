@@ -1,3 +1,7 @@
+// ***********************************
+// *** MAIN PART ********************
+// ***********************************
+
 //get all buttons
 buttons = document.querySelectorAll(".buttonNumber")
 
@@ -11,6 +15,10 @@ let calculation = ""
 let result = 0
 let maxScreenSize = 15 //how many numbers we can display
 drawLines() //draw empty chart
+
+// ***********************************
+// *** CALC PART *********************
+// ***********************************
 
 function buttonClicked(){
     //parsing string to DOM el
@@ -30,7 +38,7 @@ function buttonClicked(){
         }
     } else if (clickedValue == "="){
         try{
-            calculation = eval(calculation) + ""
+            calculation = eval(calculation) + "" //eval should be later changed to something else
             showValueOnScreen(calculation)
             console.log(calculation)
         } catch (err) {
@@ -69,6 +77,11 @@ function undoOneLetter(){
     }
 }
 
+// ***********************************
+// *** CHART PART ********************
+// ***********************************
+
+//drawing chart squares
 function drawLines(){
     let xLines = 16
     let yLines = 8
@@ -97,6 +110,15 @@ function drawLines(){
         ctx.lineTo(width/xLines*i,height);
     }
     ctx.stroke();
+
+    //draw 2 bolded lines
+    ctx.beginPath()
+    ctx.lineWidth=2;
+    ctx.moveTo(0,height/yLines*yLines/2);
+    ctx.lineTo(width,height/yLines*yLines/2);
+    ctx.moveTo(width/xLines*xLines/2,0);
+    ctx.lineTo(width/xLines*xLines/2,height);
+    ctx.stroke();
 }
 
 
@@ -122,13 +144,8 @@ function drawChart(chartType){
 
     //drawing chart with 0.1 acuracy
     for(let x = -xLines/2 + 0.1; x<=xLines/2; x=x+0.1){
-        switch(chartType){
-            case "tg": tg(ctx, x, xPxPer1cm, yPxPer1cm); break;
-            case "ctg": ctg(ctx, x, xPxPer1cm, yPxPer1cm); break;
-            case "cos": cos(ctx, x, xPxPer1cm, yPxPer1cm); break;
-            case "sin": sin(ctx, x, xPxPer1cm, yPxPer1cm); break;
-        }
-
+        //call function name stored in chartType variable
+        window[chartType](ctx, x, xPxPer1cm, yPxPer1cm);
     }
     ctx.stroke();
     ctx.restore();
