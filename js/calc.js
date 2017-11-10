@@ -160,8 +160,8 @@ function tg(ctx, x, xPxPer1cm, yPxPer1cm){
 
 function ctg(ctx, x, xPxPer1cm, yPxPer1cm){
         if(!((1/Math.tan(x-0.1))*yPxPer1cm*-1>0 && (1/Math.tan(x))*yPxPer1cm*-1<0)){ // to not write lines from down to up
-        ctx.moveTo((x-0.1)*xPxPer1cm, (1/Math.tan(x-0.1))*yPxPer1cm*-1)
-        ctx.lineTo(x*xPxPer1cm, (1/Math.tan(x))*yPxPer1cm*-1)
+        ctx.moveTo((x-0.1)*xPxPer1cm, (Math.tan(1/(x-0.1)))*yPxPer1cm*-1)
+        ctx.lineTo(x*xPxPer1cm, (Math.tan(1/x))*yPxPer1cm*-1)
         }
 }
 
